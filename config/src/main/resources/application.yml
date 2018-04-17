@@ -1,0 +1,25 @@
+server:
+  port: 9522
+eureka:
+  client:
+   serviceUrl:
+    defaultZone: http://127.0.0.1:9521/eureka/
+spring:
+ application:
+  name: config
+  profiles:
+   active: native
+ cloud:
+  config:
+      server:
+#        git:
+#          uri:
+#          searchPaths: /dev
+#          username:
+#          password:
+        native:
+          search-locations: classpath:/config-repo
+          default-label: ""
+      discovery:
+        enabled: true
+debug: true

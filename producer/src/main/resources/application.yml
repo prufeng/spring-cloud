@@ -1,0 +1,12 @@
+spring:
+ application:
+  name: producer-service
+server:
+  port: 9523
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.01
+  client:
+   serviceUrl:
+    defaultZone: http://127.0.0.1:9521/eureka/

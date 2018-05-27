@@ -5,11 +5,14 @@ server:
   port: 9521
 eureka:
   instance:
-    hostname: 127.0.0.1
-#    leaseRenewalIntervalInSeconds: 5
-#    leaseExpirationDurationInSeconds: 5
+    hostname: ${eureka.server:http://127.0.0.1}
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+    prefer-ip-address: true
   client:
    registerWithEureka: false
    fetchRegistry: false
    serviceUrl:
-    defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    defaultZone: ${eureka.instance.hostname}:${server.port}/eureka/
+#  server:
+#    enableSelfPreservation: false

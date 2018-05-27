@@ -1,0 +1,9 @@
+spring:
+ application:
+  name: consumer-service
+server:
+  port: 9524
+eureka:
+  client:
+   serviceUrl:
+    defaultZone: http://127.0.0.1:9521/eureka/

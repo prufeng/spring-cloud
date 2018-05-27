@@ -1,12 +1,14 @@
 server:
   port: 9522
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
    serviceUrl:
     defaultZone: http://127.0.0.1:9521/eureka/
 spring:
  application:
-  name: config
+  name: config-service
   profiles:
    active: native
  cloud:
@@ -22,4 +24,4 @@ spring:
           default-label: ""
       discovery:
         enabled: true
-debug: true
+#debug: true
